@@ -1,8 +1,9 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: nginx
+  name: nginx-nodeport
 spec:
+  type: NodePort 
   selector:
     project: expense
     module: backend
