@@ -45,7 +45,7 @@ spec:
     persistentVolumeClaim:
       claimName: ebs-static     
 ---
-kind: Pod 
+kind: Service 
 apiVersion: v1
 metadata:
   name: nginx 
