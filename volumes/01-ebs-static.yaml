@@ -34,8 +34,8 @@ spec:
   - name: nginx
     image: nginx 
     volumeMounts: # docker run -v hostpath:containerpath 
-    - name: persistent-storage
-      mountPath: /data
+    - name: ebs-static 
+      mountPath: /usr/share/nginx/html 
   volumes:
   - name: ebs-static 
     persistentVolumeClaim:
