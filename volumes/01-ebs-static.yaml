@@ -24,3 +24,19 @@ spec:
   resources:
     requests:
       storage: 5Gi  
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ebs-static
+spec:
+  containers:
+  - name: nginx
+    image: nginx 
+    volumeMounts: # docker run -v hostpath:containerpath 
+    - name: persistent-storage
+      mountPath: /data
+  volumes:
+  - name: ebs-static 
+    persistentVolumeClaim:
+      claimName: ebs-static     
